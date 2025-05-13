@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Html2ViewsConversion.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Html2ViewsConversion.Controllers
@@ -7,10 +8,17 @@ namespace Html2ViewsConversion.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly UserManager<IdentityUser> userManager;
+        private readonly SignInManager<IdentityUser> signInManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(
+             ILogger<HomeController> logger,
+             SignInManager<IdentityUser> signInManager,
+             UserManager<IdentityUser> userManager)
         {
             _logger = logger;
+            this.signInManager = signInManager;
+            this.userManager = userManager;
         }
 
         public IActionResult Index()
