@@ -4,8 +4,6 @@
 
                 ViewContext.RouteData.Values["Controller"].ToString() == "Home";
 }
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +15,7 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
-	<link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
     @await RenderSectionAsync("Styles", required: false)
 </head>
 <body>
@@ -59,7 +57,6 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
 
-
                 <!-- User Account and Cart -->
                 <div class="d-flex">
 
@@ -68,7 +65,7 @@
                     <a asp-controller="Cart" asp-action="Index" class="nav-link cart-icon">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="badge bg-danger rounded-circle cart-badge">
-                             @await Component.InvokeAsync("CartItemCount")
+                            @await Component.InvokeAsync("CartItemCount")
                         </span>
                     </a>
                 </div>
@@ -77,10 +74,9 @@
     </nav>
 
     <!-- Main Content Area - This would be replaced by page-specific content -->
-    <main class="container my-4">
-        
-            @RenderBody()
-        </main>
+    <main>
+        @RenderBody()
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -93,18 +89,18 @@
                 <div class="col-md-2 mb-3">
                     <h5>Shop</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item"><a href="products.html?category=new" class="nav-link p-0 text-muted">New Arrivals</a></li>
-                        <li class="nav-item"><a href="products.html?category=bestsellers" class="nav-link p-0 text-muted">Best Sellers</a></li>
-                        <li class="nav-item"><a href="products.html?category=deals" class="nav-link p-0 text-muted">Deals</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Products" asp-action="Index" asp-route-category="new" class="nav-link p-0 text-muted">New Arrivals</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Products" asp-action="Index" asp-route-category="bestsellers" class="nav-link p-0 text-muted">Best Sellers</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Products" asp-action="Index" asp-route-category="deals" class="nav-link p-0 text-muted">Deals</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 mb-3">
                     <h5>Support</h5>
                     <ul class="nav flex-column">
-                        <li class="nav-item"><a href="contact.html" class="nav-link p-0 text-muted">Contact Us</a></li>
-                        <li class="nav-item"><a href="faq.html" class="nav-link p-0 text-muted">FAQs</a></li>
-                        <li class="nav-item"><a href="shipping.html" class="nav-link p-0 text-muted">Shipping</a></li>
-                        <li class="nav-item"><a href="returns.html" class="nav-link p-0 text-muted">Returns</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Contact" class="nav-link p-0 text-muted">Contact Us</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="FAQ" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Shipping" class="nav-link p-0 text-muted">Shipping</a></li>
+                        <li class="nav-item"><a asp-area="" asp-controller="Home" asp-action="Returns" class="nav-link p-0 text-muted">Returns</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-3">
@@ -117,11 +113,11 @@
                 </div>
             </div>
             <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                <p>&copy; 2023 MyStore, Inc. All rights reserved.</p>
+                <p>&copy; @DateTime.Now.Year MyStore, Inc. All rights reserved.</p>
                 <ul class="list-unstyled d-flex">
-                    <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-facebook"></i></a></li>
-                    <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li class="ms-3"><a class="link-dark" href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="javascript:void(0);"><i class="fab fa-facebook"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="javascript:void(0);"><i class="fab fa-instagram"></i></a></li>
+                    <li class="ms-3"><a class="link-dark" href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
                 </ul>
             </div>
         </div>
