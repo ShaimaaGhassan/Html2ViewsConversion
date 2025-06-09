@@ -1,10 +1,9 @@
 using System.Diagnostics;
 using Html2ViewsConversion.Models;
 using Html2ViewsConversion.Models.Home;
-using Html2ViewsConversion.Models.Products;
+
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace Html2ViewsConversion.Controllers
 {

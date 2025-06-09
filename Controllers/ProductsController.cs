@@ -220,10 +220,7 @@ namespace Html2ViewsConversion.Controllers
 
             return View(model);
         }
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+
 
         public IActionResult Edit()
         {
