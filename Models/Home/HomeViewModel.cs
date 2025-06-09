@@ -7,7 +7,8 @@
         public IEnumerable<ProductViewModel> NewArrivals { get; set; }
 
         public SpecialOfferViewModel? SpecialOffer { get; set; }
-
-
+        public IEnumerable<CategoryViewModel> Categories { get; internal set; }
+        public IEnumerable<TestimonialViewModel> Testimonials { get; internal set; }
+        public CallToActionViewModel CallToAction { get; internal set; }
     }
 }
