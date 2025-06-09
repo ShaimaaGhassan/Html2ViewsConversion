@@ -221,6 +221,20 @@ namespace Html2ViewsConversion.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            var product = _products.FirstOrDefault(p => p.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            _products.Remove(product);
+
+            TempData["SuccessMessage"] = $"Product '{product.Name}' eas successfully deleted;";
+            return RedirectToAction(nameof(Index));
+        }
 
         public IActionResult Edit()
         {
